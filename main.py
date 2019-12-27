@@ -35,6 +35,9 @@ class Parkinson:
         self.classifier.fit(self.X_train, self.y_train.ravel())
         self.y_pred = self.classifier.predict(self.X_test)
         print(f'Model has {round(accuracy_score(self.y_test, self.y_pred),2)*100}% accuracy.')
+        
+    def predict(self, data):
+        return self.classifier.predict(data)
     
     @classmethod
     def getData(cls, df):
